@@ -106,7 +106,7 @@ int main ()
 
     for(i = 0; i < TAM; i++)
     {
-        if((alunos[i].n1 + alunos[i].n2 + alunos[i].n3)/ 3 > 6)
+        if((alunos[i].n1 + alunos[i].n2 + alunos[i].n3)/ 3 >= 6)
         {
             printf("Nome: %s\n", alunos[i].nome);
             printf("Nota: %.2f\n", (alunos[i].n1 + alunos[i].n2 + alunos[i].n3)/ 3);
