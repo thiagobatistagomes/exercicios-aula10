@@ -17,7 +17,7 @@ int main ()
 {
     aluno alunos[TAM];
     int i;
-    float maiorn1;
+    float maiorn1, maiormedia;
 
     //preenchendo os dados dos alunos
 
@@ -50,12 +50,32 @@ int main ()
         {
             printf("Aluno com maior nota na primeira prova:\n");
             printf("Nome: %s\n", alunos[i].nome);
-            printf("Nota: %.2f", alunos[i].n1);
-            break;
+            printf("Nota: %.2f\n", alunos[i].n1);
+            printf("\n");
+          
         }
     }
 
+    //encontrar o aluno com maior media geral, imprimir seu nome completo, seguido da média, 2 casas decimais.
 
+    maiormedia = (alunos[0].n1 + alunos[0].n2 + alunos[0].n3)/ 3;
+
+    for(i = 0; i < TAM; i++)
+    {
+        if((alunos[i].n1 + alunos[i].n2 + alunos[i].n3)/ 3 > maiormedia)
+        {
+            maiormedia = (alunos[i].n1 + alunos[i].n2 + alunos[i].n3)/ 3;
+        }
+    }
+
+    for(i = 0; i < TAM; i++)
+    {
+        if((alunos[i].n1 + alunos[i].n2 + alunos[i].n3)/ 3 == maiormedia)
+        {
+            printf("Nome: %s\n", alunos[i].nome);
+            printf("Media: %.2f", maiormedia);
+        }
+    }
 
     return 0;
 }
