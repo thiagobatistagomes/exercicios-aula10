@@ -28,24 +28,19 @@ int main ()
 
     do
     {
-        printf("Digite o nome do autor ou 'sair' para parar o programa\n");
         scanf(" %[^\n]", opcao);
-        printf("Livros deste autor:\n");
-        idx = 0;
-        for(i = 0; i < TAM; i++)
+        if (strcmp(opcao, "sair") != 0)
         {
-            if(strcmp(livros[i].autor, opcao) == 0)
+            printf("Livros de %s:\n", opcao);
+            for(i = 0; i < TAM; i++)
             {
-                printf("Titulo: %s\n", livros[i].titulo);
-                printf("Ano: %d\n", livros[i].ano);
-                idx++;
+                if(strcmp(livros[i].autor, opcao) == 0)
+                {
+                    printf("%s (%d)\n", livros[i].titulo, livros[i].ano);
+                }
             }
+            printf("\n");
         }
-        if(idx == 0)
-        {
-            printf("Autor nao encontrado em nossa base de dados\n");
-        }
-        printf("\n");
     } while (strcmp(opcao, "sair") != 0);
     
 

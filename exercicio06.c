@@ -27,18 +27,20 @@ int main ()
 
     do
     {
-        printf("Digite um valor para P:\n");
         scanf("%f", &p);
-        for(i = 0; i < TAM; i++)
+        if (p > -1.00)
         {
-            if(p > carros[i].preco)
+            printf("Carros mais baratos que %.2f:\n", p);
+            for (i = 0; i < TAM; i++)
             {
-                printf("Marca: %s\n", carros[i].marca);
-                printf("Preco: %.2f\n", carros[i].preco);
-                printf("Ano: %d\n", carros[i].ano);
+                if (p > carros[i].preco)
+                {
+                    printf("%s %.2f %d\n", carros[i].marca, carros[i].preco, carros[i].ano);
+                }
             }
+            printf("\n");
         }
-    } while (p > 0.0);
+    } while (p > -1.00);
     
 
 

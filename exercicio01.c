@@ -8,7 +8,8 @@ typedef struct pessoa
 {
     char nome[30];
     int idade;
-    char endereco[30];
+    char rua[30];
+    int numero;
 } pessoa;
 
 int main ()
@@ -22,11 +23,11 @@ int main ()
     scanf("%d", &a.idade);
 
     printf("Digite seu endereco:\n");
-    scanf(" %[^\n]", a.endereco);
+    scanf(" %[^\n] %d", a.rua, &a.numero);
 
     printf("Nome: %s\n", a.nome);
     printf("Idade: %d\n", a.idade);
-    printf("Endereco: %s\n", a.endereco);
+    printf("Endereco: %s, %d\n", a.rua, a.numero);
 
     return 0;
 }
